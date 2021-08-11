@@ -20,5 +20,7 @@ Route::get('/', function () {
 Route::get('/add-bill',[BillController::class,'add_bill']);
 Route::get('/all-bill',[BillController::class,'all_bill']);
 Route::post('/save-bill',[BillController::class,'save_bill']);
-Route::get('/export-invoice/{id}',[BillController::class,'export_invoice']);
+Route::get('/invoice{invoice_id}',[BillController::class,'show_invoice_detail']);
+Route::get('/export{invoice_id}',[BillController::class,'export']);
+
 

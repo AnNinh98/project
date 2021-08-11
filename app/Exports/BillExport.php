@@ -18,6 +18,6 @@ class BillExport implements FromCollection
 
     public function collection()
     {
-         return ClassSubject::findOrFail($this->id);
+         return Bill::findOrFail($this->id);
     }
 }

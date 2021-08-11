@@ -12,10 +12,10 @@
                     <tr>
                         <th>Tên công ty</th>
                         <th>Địa chỉ công ty</th>
-                        <th>Số điện thoại</th>
+                        <!-- <th>Số điện thoại</th>
                         <th>Số fax</th>
                         <th>Estimate ID</th>
-                        <th>Tên dự án</th>
+                        <th>Tên dự án</th> -->
                         <th>Tên hạng mục dự án</th>
                         <th>Giá tiền</th>
                         <th>Ngày tạo hóa đơn</th>
@@ -28,20 +28,20 @@
                     <tr>
                         <td>{{$bill->company_name}}</td>
                         <td>{{$bill->company_address}}</td>
-                        <td>{{$bill->company_tel}}</td>
+                        <!-- <td>{{$bill->company_tel}}</td>
                         <td>{{$bill->company_fax}}</td>
                         <td>{{$bill->estimate_No}}</td>
-                        <td>{{$bill->project_name}}</td>
+                        <td>{{$bill->project_name}}</td> -->
                         <td>{{$bill->item_name}}</td>
                         <td>{{number_format($bill->amout,0)}}</td>
-                        <td>{{\Carbon\Carbon::parse($bill->today)->format('d/m/Y')}}</td>
-                        <td>{{\Carbon\Carbon::parse($bill->expire_day)->format('d/m/Y')}}</td>
-                        <td><a href="{{URL::to('/export-invoice/'.$bill->id)}}">Export invoice</a></td>
+                        <td>{{\Carbon\Carbon::parse($bill->today)->format('Y/m/d')}}</td>
+                        <td>{{\Carbon\Carbon::parse($bill->expire_day)->format('Y/m/d')}}</td>
+                        <td><a href="{{URL::to('/invoice'.$bill->id)}}" style="color:seagreen;">Xem chi tiết</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            
+            <!-- <a href="{{ url('/') }}/export{{$all_bill[0]->id}}" class="btn btn-success">Export to .xlsx</a> -->
         </div>
         <footer class="panel-footer">
             <div class="row">
